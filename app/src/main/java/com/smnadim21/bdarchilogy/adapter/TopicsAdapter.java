@@ -31,6 +31,7 @@ import java.util.List;
 import static com.smnadim21.bdarchilogy.advert.AdsLib.checkSubStatus;
 import static com.smnadim21.bdarchilogy.advert.AdsLib.subscribe;
 import static com.smnadim21.bdarchilogy.advert.SP.setSubCode;
+import static com.smnadim21.bdarchilogy.advert.bdapps.Robi.MSG_TEXT;
 
 public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.MyViewHolder> {
     private List<CatItem> mDataset;
@@ -179,7 +180,7 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.MyViewHold
 
                 Uri uri = Uri.parse("smsto:21213");
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                intent.putExtra("sms_body", "start abcd");
+                intent.putExtra("sms_body", MSG_TEXT);
                 activity.startActivity(intent);
                 dialog.dismiss();
             }

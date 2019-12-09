@@ -1,22 +1,11 @@
 package com.smnadim21.bdarchilogy;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.firebase.database.FirebaseDatabase;
 import com.smnadim21.bdarchilogy.adapter.TopicsAdapter;
 
 import java.util.ArrayList;
@@ -24,16 +13,15 @@ import java.util.List;
 
 public class ItemListActivity extends AppCompatActivity {
 
+    List<CatItem> myDataset = new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    List<CatItem> myDataset = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
-
 
 
         myDataset.add(new CatItem(
@@ -130,20 +118,19 @@ public class ItemListActivity extends AppCompatActivity {
         }
 */
 
-         recyclerView = (RecyclerView) findViewById(R.id.rv_main);
+        recyclerView = findViewById(R.id.rv_main);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-         mAdapter = new TopicsAdapter(this,myDataset);
-         recyclerView.setAdapter(mAdapter);
+        mAdapter = new TopicsAdapter(this, myDataset);
+        recyclerView.setAdapter(mAdapter);
     }
-
 
 
 }
