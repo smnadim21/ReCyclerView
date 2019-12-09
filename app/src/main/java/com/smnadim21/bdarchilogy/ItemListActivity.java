@@ -6,13 +6,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.smnadim21.bdarchilogy.adapter.TopicsAdapter;
 
 import java.util.ArrayList;
@@ -115,6 +119,17 @@ public class ItemListActivity extends AppCompatActivity {
                 "হাটিকুমরুল, নগরবাড়ী, বগুড়া"));
 
 
+
+
+   /*     for( int i = 0 ; i < myDataset.size();i++ )
+        {
+            FirebaseDatabase.getInstance().getReference()
+                    .child("bdArcheology")
+                    .child("bdArcheology_" + i)
+                    .setValue(myDataset.get(i));
+        }
+*/
+
          recyclerView = (RecyclerView) findViewById(R.id.rv_main);
 
         // use this setting to improve performance if you know that changes
@@ -130,29 +145,5 @@ public class ItemListActivity extends AppCompatActivity {
     }
 
 
-    public void showDialog(Activity activity, String uname) {
-        final Dialog dialog = new Dialog(activity);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCancelable(false);
-        dialog.setCancelable(true);
-        dialog.setCanceledOnTouchOutside(true);
-        dialog.setContentView(R.layout.sub);
 
-
-        TextView textView =  dialog.findViewById(R.id.textView_sub);
-        textView.setText(uname + " আপনার জন্য অপেক্ষা করছে...");
-        Button dialogButton = (Button) dialog.findViewById(R.id.video_ad);
-
-        dialogButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
-
-
-        dialog.show();
-
-    }
 }
