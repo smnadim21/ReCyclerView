@@ -1,18 +1,7 @@
 package com.smnadim21.bdarchilogy.advert;
 
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
 
 import com.smnadim21.bdarchilogy.advert.datamodel.Status;
 import com.smnadim21.bdarchilogy.advert.retrofit.APIInterface;
@@ -65,11 +54,10 @@ public class AdsLib {
     }
 
 
-    public static  void subscribe()
-    {
+    public static void subscribe() {
         RetrofitClientInstance.getRetrofitInstance()
                 .create(APIInterface.class)
-                .subscribe(APP_ID,APP_PATH)
+                .subscribe(APP_ID, APP_PATH)
                 .enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
@@ -161,7 +149,6 @@ public class AdsLib {
         dialog.show();
 
     }*/
-
 
 
 }
