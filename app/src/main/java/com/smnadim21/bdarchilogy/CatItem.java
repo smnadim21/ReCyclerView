@@ -3,12 +3,21 @@ package com.smnadim21.bdarchilogy;
 public class CatItem {
 
     private String title,desc,image,loc;
+    Integer imageres;
 
     public CatItem(String title, String desc, String image, String loc) {
         this.title = title;
         this.desc = desc;
         this.image = image;
         this.loc = loc;
+    }
+
+    public Integer getImageres() {
+        return imageres;
+    }
+
+    public void setImageres(Integer imageres) {
+        this.imageres = imageres;
     }
 
     public String getTitle() {

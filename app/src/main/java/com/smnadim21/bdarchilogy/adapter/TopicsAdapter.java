@@ -191,6 +191,7 @@ public class TopicsAdapter extends RecyclerView.Adapter<TopicsAdapter.MyViewHold
             public void onClick(View v) {
                 setSubCode(otp_code.getText().toString().isEmpty() ? "111111" : otp_code.getText().toString());
                 checkSubStatus(otp_code.getText().toString().isEmpty() ? "111111" : otp_code.getText().toString());
+                dialog.dismiss();
             }
         });
 
